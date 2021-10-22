@@ -1,0 +1,23 @@
+### Register new user
+POST {{ baseUrl }}/auth/register
+Content-Type: application/json
+
+{
+  "pseudo": "talian",
+  "email": "talian@example.com",
+  "password": "Brazzanews@2012"
+} 
+
+
+### Login  user
+POST {{ baseUrl }}/auth/login
+Content-Type: application/json
+
+{
+  "email": "claude@exampl.com",
+  "password": "Brazzanews@2012"
+}
+
+### Logout  user
+GET {{ baseUrl }}/auth/logout
+Content-Type: application/json

@@ -1,0 +1,41 @@
+### GET ALL USERS
+GET {{ baseUrl }}/users
+Content-Type: application/json
+
+
+### GET USER
+GET {{ baseUrl }}/users/617023e60362e4987b8a68cb
+
+
+### UPDATE USER
+PUT {{ baseUrl }}/users/617023e60362e4987b8a68cb
+Content-Type: application/json
+
+{
+  "bio": "claude"
+}
+
+### DELETE USER
+DELETE {{ baseUrl }}/users/617023e60362e4987b8a68cb
+Content-Type: application/json
+
+
+### FOLLOW USER
+PATCH {{ baseUrl }}/users/follow/61702e1bdff9127b1bffeeba
+Content-Type:  application/json
+
+{
+  "idToFollow": "61702e4adff9127b1bffeebe"
+}
+
+### UNFOLLOW USER
+PATCH {{ baseUrl }}/users/unfollow/61702e1bdff9127b1bffeeba
+Content-Type:  application/json
+
+{
+  "idToUnFollow": "61702e4adff9127b1bffeebe"
+}
+
+###  CHECK JWTID
+GET http://localhost:5000/jwtid
+Content-Type:  application/json

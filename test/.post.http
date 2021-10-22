@@ -1,0 +1,82 @@
+@postId=6172ba97840c2f1458de09c8
+
+@idPersonWhoLike=61702e4adff9127b1bffeebe
+
+### Create new post
+POST {{ baseUrl }}/posts
+Content-Type: application/json
+
+{
+
+} 
+
+### Gel all posts
+GET {{ baseUrl }}/posts
+Content-Type: application/json
+
+
+### Get one post
+GET {{ baseUrl }}/posts/{{postId}}
+Content-Type: application/json
+
+
+
+### Update post
+PUT {{ baseUrl }}/posts/{{postId}}
+Content-Type: application/json
+
+{
+  "message": "post de claude modifier"
+}
+
+### Like post
+PATCH {{ baseUrl }}/posts/like-post/{{postId}}
+Content-Type: application/json
+
+{
+  "idPersonWhoLike": "61702e4adff9127b1bffeebe"
+}
+
+### Unlike post
+PATCH {{ baseUrl }}/posts/unlike-post/{{postId}}
+Content-Type: application/json
+
+{
+  "idPersonWhoLike": "61702e4adff9127b1bffeebe"
+}
+
+### Comment post
+PATCH {{ baseUrl }}/posts/comment-post/{{postId}}
+Content-Type: application/json
+
+{
+  "commenterId": "61702e4adff9127b1bffeebe",
+  "commenterPseudo": "claude",
+  "commenterText": "Bonjour Talian, merci d'apprecier mon travail "
+}
+
+### Comment post edit
+PATCH {{ baseUrl }}/posts/comment-post-edit/{{postId}}
+Content-Type: application/json
+
+{
+  // Id du commentaire
+  "commentId": "6172bc531e2efd1984942f96",
+  "commenterText": "Je crois que je me suis tromper de destinataire"
+}
+ 
+### Comment post delete
+PATCH {{ baseUrl }}/posts/comment-post-delete/{{postId}}
+Content-Type: application/json
+
+{
+  // Id du commentaire
+  "commentId": "6172bc531e2efd1984942f96"
+}
+ 
+
+
+
+
+### Delete post
+DELETE {{ baseUrl }}/posts/{{postId}}

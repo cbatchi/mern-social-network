@@ -1,0 +1,1 @@
+module.exports = (routes, callback) => Object.keys(routes).map(keys => callback?.(keys, routes[keys]));
